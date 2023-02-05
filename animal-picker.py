@@ -6,21 +6,22 @@ import wikipedia
 import random
 
 # emotion detection
-face_analysis = DeepFace.analyze(img_path = "guy3.webp", enforce_detection=False)
+face_analysis = DeepFace.analyze(img_path = "guy.jpg", enforce_detection=False)
 dominantEmotion = face_analysis[0]["dominant_emotion"]
 face_analysis[0]["emotion"].pop(dominantEmotion)
 secondEmotion = max(face_analysis[0]["emotion"])
 
 # sets favorite animal and search query
 print(dominantEmotion + " and " + secondEmotion)
-favorite_animal = "can"
+favorite_animal = "dog"
 query = favorite_animal + " " + dominantEmotion + " and " + secondEmotion + " animal"
 
 # finds images using google image crawler
 if os.path.exists("images"):
     shutil.rmtree("images")
+filter = dict(type="photo")
 image_crawler = GoogleImageCrawler(storage = {"root_dir": r'images'})
-image_crawler.crawl(keyword = query, max_num = 3)
+image_crawler.crawl(keyword = query, filters = filter, max_num = 3)
 
 # keeps one random image
 randInt = random.randint(1,3)
