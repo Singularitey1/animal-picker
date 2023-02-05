@@ -5,29 +5,79 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="HackViolet 2023 program that has user input a picture of themselves and their favorite animal. Program searches for corresponding animal that best matches their emotion.">
 	<meta charset="UTF-8">
-	<style>
-	
-	</style>
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: "white";
+}
+.navbar a {
+  float: right;
+  color: "white";
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: "white";
+  color: black;
+}
+.navbar a.active {
+  background-color: "white";
+  color: "white";
+}
+input[type=text], select {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 10%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+div {
+  border-radius: 5px;
+  background-color: "white";
+  padding: 20px;
+}
+</style>
 </head>
-<!-- work in progress, will finish styling with CSS -->
+<!-- navigation bar -->
+<body>
 <div class="navbar">
-	<a class="active" href="animalpicker.tech">Home</a>
-	<a href="animalpicker.tech/about">About<a/>
+	<a href="animalpicker.tech	/about" style="color:#000000">About<a/>
+	<a class="active" href="animalpicker.tech" style="color:#000000">Home</a>
 </div>
 
-<body>
-</p>
-<p align="center" style="color:#333333; padding-top:20em; margin-bottom:2em"><font size="24px">What is your favorite animal?</font></p>
-	<!-- allow for user input; probs photos only
-	after that button next to or under input to initiate search -->
-<div style=" text-align:center;"
+<p align="center" style="padding-top:10em; margin-bottom:2em"><font size="24px">What is your favorite animal?</font></p>
+	<!-- allow for user input text -->
+<div style="text-align:center; "
+  <form action="/action_page.php">
+    <input type="text" id="fanimal" name="favoriteanimal" placeholder="Your favorite animal..">
+  </form>
+</div>
+	<!-- allow for user input image -->
+<div style="text-align:center;"
 	<form action="/action_page.php"
 		<label for="img">Select image:</label>
 		<input type="file" id="img" name="img"
-	accept="image/*">
-		<input type="submit">
+	accept="image/*;">
+	
 	</form>
 </div>
-
+<p align="center"><input type="submit"></p>
 </body>
 </html>
