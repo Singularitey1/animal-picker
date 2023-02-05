@@ -36,7 +36,7 @@ def searchWikipedia():
     if not search:
         search = wikipedia.suggest(favorite_animal)
         if search == None:
-            return ["You may want to rewrite your favorite animal.", "No link found."]
+            return ["You may have spelled your favorite animal wrong.", "No link found."]
         try:
             result = wikipedia.summary(search, auto_suggest=False)
             link = wikipedia.page(search, auto_suggest=False).url
@@ -50,6 +50,6 @@ def searchWikipedia():
             return ["Wikipedia not found. Try to be specific.", "No link found."]
     return [result, link]
 
-# prints the wikipedia summary of the favorite animal
+# prints the wikipedia summary and link of the favorite animal
 print(searchWikipedia()[0])
 print(searchWikipedia()[1])
